@@ -1,5 +1,6 @@
 {
   "name": "Solar Dtux Card",
-  "render_readme": true,
   "filename": "solar-dtux-card.js"
+  "filename": "solar-dtux-card.js"
+  "render_readme": true
 }
