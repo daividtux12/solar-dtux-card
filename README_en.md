@@ -86,11 +86,11 @@ A custom Home Assistant card that displays your complete solar energy system —
 
 **Step 1:** Add Custom Repository to HACS:
 
-[![Open HACS Repository](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=doanlong1412&repository=solar-weather-card&category=plugin)
+[![Open HACS Repository](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=daividtux12&repository=solar-dtux-card&category=plugin)
 
 > If the button doesn't work, add manually:
 > **HACS → Frontend → ⋮ → Custom repositories**
-> → URL: `https://github.com/doanlong1412/solar-weather-card` → Type: **Dashboard** → Add
+> → URL: `https://github.com/daivitux12/solar-dtux-card` → Type: **Dashboard** → Add
 
 **Step 2:** Search for **Solar Weather Card** → **Install**
 
@@ -100,11 +100,11 @@ A custom Home Assistant card that displays your complete solar energy system —
 
 ### Option 2 — Manual
 
-1. Download [`solar-weather-card.js`](https://github.com/doanlong1412/solar-weather-card/releases/latest)
-2. Copy to `/config/www/solar-weather-card.js`
+1. Download [`solar-weather-card.js`](https://github.com/daividtux12/solar-dtux-card/releases/latest)
+2. Copy to `/config/www/solar-dtux-card.js`
 3. Go to **Settings → Dashboards → Resources** → **Add resource**:
    ```
-   URL:  /local/solar-weather-card.js
+   URL:  /local/solar-dtux-card.js
    Type: JavaScript module
    ```
 4. Hard-reload your browser (Ctrl+Shift+R)
@@ -116,7 +116,7 @@ A custom Home Assistant card that displays your complete solar energy system —
 ### Step 1 — Add the card to your dashboard
 
 ```yaml
-type: custom:solar-weather-card
+type: custom:solar-dtux-card
 ```
 
 After adding the card, click **✏️ Edit** to open the Config Editor.
