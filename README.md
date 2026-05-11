@@ -1,4 +1,4 @@
-# ☀️ Solar Weather Card
+# ☀️ Solar Dtux Card
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/hacs/integration)
 ![version](https://img.shields.io/badge/version-1.8.0-blue)
@@ -15,7 +15,7 @@ One card. Zero dependencies. Drops straight into Home Assistant.
 
 ## 📸 Preview
 
-![Solar Weather Card Preview](assets/preview.png)
+![Solar Dtux Card Preview](assets/preview.png)
 
 ---
 
