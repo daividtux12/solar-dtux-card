@@ -201,7 +201,7 @@ Badge counters on each section (e.g. `5/6`) tell you how many entities are fille
 > **HACS → Frontend → ⋮ → Custom repositories**
 > → URL: `https://github.com/daivitux12/solar-dtux-card` → Type: **Dashboard** → Add
 
-**Step 2:** Search for **Solar Weather Card** → **Install**
+**Step 2:** Search for **Solar Dtux Card** → **Install**
 
 **Step 3:** Hard-reload your browser (Ctrl+Shift+R)
 
@@ -209,7 +209,7 @@ Badge counters on each section (e.g. `5/6`) tell you how many entities are fille
 
 ### Option 2 — Manual
 
-1. Download [`solar-weather-card.js`](https://github.com/daividtux12/solar-dtux-card/releases/latest)
+1. Download [`solar-Dtux-card.js`](https://github.com/daividtux12/solar-dtux-card/releases/latest)
 2. Copy to `/config/www/solar-dtux-card.js`
 3. Go to **Settings → Dashboards → Resources** → **Add resource**:
    ```
