@@ -1,58 +1,3 @@
-/**
- * v1.8.1
- * -------
- * [NEW] Show/Hide Clock & Weather  (`show_clock`)
- *       — Toggle the entire top section (clock, date, temperature,
- *         hourly strip, tomorrow forecast) from the Visual Editor.
- *         When hidden, the section is completely removed from the DOM.
- *
- * [NEW] Show/Hide Rooms / Devices  (`show_rooms_section`)
- *       — Toggle all room cards in the energy diagram SVG.
- *         Branch flow lines are unaffected; only the room node cards
- *         are hidden.
- *
- * [NEW] Show/Hide Battery Bar  (`show_battery_bar`)
- *       — Toggle the battery percentage bar, SOC label, and ETA text
- *         at the bottom of the card.
- *
- * [NEW] Show/Hide Stats Circles  (`show_stats_circles`)
- *       — Toggle the five SVG stat circles (Saving, Solar, Home,
- *         Grid, System) rendered below the energy diagram.
- *
- * [NEW] Show/Hide Battery Node  (`show_battery_node`)
- *       — Toggle the battery card node inside the energy diagram.
- *         When disabled the node is not rendered at all (foBAT = '').
- *
- * [NEW] Temperature Unit  (`temp_unit: C | F`)
- *       — Switch all temperature values on the card between °C and °F.
- *         Applies to: outdoor temperature, today Hi/Lo, tomorrow Hi/Lo,
- *         Inverter temperature and Battery temperature in the stat circles.
- *         Conversion formula: °F = °C × 9/5 + 32.
- *         Selector added in Visual Editor Display Options.
- *
- * v1.8.0
- *Rooms** — up to 4 configurable rooms/devices shown below the energy diagram, with custom name, icon, entity
- *YAML-style flow** — particle engine ported from YAML (stroke-dasharray animate, lighter & stable)
- *Flow styles** — Spark (YAML-style), Wave, Line
- *Room flow** — animated branch flows from Home node to each room
- *Removed Minimal mode** — animations always active (YAML parity)
- *Solar Forecast Chart** — actual hourly line + Solcast/formula forecast curve
- *Solcast integration** — reads detailed hourly forecast from [ha-solcast-solar](https://github.com/BJReplay/ha-solcast-solar) by **@BJReplay**
- *Formula sensor fallback** — forecast based on sun arc + cloud coverage when Solcast is unavailable
- *Hourly recording automation** — logs real solar output each hour into `input_text.solar_live_curve`
- *Bar chart** — Actual / Forecast Today / Forecast Tomorrow kWh bars left of Home node
- *Chart visibility toggle** — `show_forecast_chart` in the Visual Editor
- *Hourly forecast strip** — `show_hourly_forecast` toggle; strip always visible when show_tomorrow is off
- *Solar design capacity** (`solar_design_wp`) — enter your system's Wp so the chart Y-axis scales accurately
- *Minimal mode** — `minimal_mode` kills all animations (node float, glow pulse, particles→dashes, sun pulse, scroll ticker)
- *Background gradient presets** — 7 built-in presets + custom CSS gradient input
- *Node Y-axis controls** — `node_inv_y` and `node_hom_y` sliders in Node Layout
- *Color Theme** — customise node borders, flow/particle colours, chart line colours, and primary text colour; one-click Reset
- */
-
-// ═══════════════════════════════════════════════════════════════
-// I18N
-// ═══════════════════════════════════════════════════════════════
 const I18N = {
   vi: {
     tomorrow:'Ngày mai', sunrise:'Mọc', sunset:'Lặn', dayPct:'qua ngày',
@@ -585,7 +530,7 @@ function makeWeatherIcon(ws){
 // ═══════════════════════════════════════════════════════════════
 // EDITOR — accordion sections + ha-entity-picker
 // ═══════════════════════════════════════════════════════════════
-class SolarWeatherCardEditor extends HTMLElement {
+class SolarDtuxCardEditor extends HTMLElement {
   constructor(){
     super();
     this.attachShadow({mode:'open'});
@@ -1270,7 +1215,7 @@ function makeWeatherIcon(ws){
 // ═══════════════════════════════════════════════════════════════
 // EDITOR — accordion sections + ha-entity-picker
 // ═══════════════════════════════════════════════════════════════
-class SolarWeatherCardEditor extends HTMLElement {
+class SolarDtuxCardEditor extends HTMLElement {
   constructor(){
     super();
     this.attachShadow({mode:'open'});
@@ -1968,7 +1913,7 @@ class SolarWeatherCardEditor extends HTMLElement {
 
     <!-- CREDIT -->
     <div style="text-align:center;padding:10px 14px 4px;font-size:11px;color:var(--secondary-text-color);line-height:1.6;">
-      ☀️ V1.8.1 Designed by <strong style="color:var(--primary-color);">@doanlong1412</strong> from 🇻🇳 Vietnam 
+      ☀️ V1.8.1 Designed by <strong style="color:var(--primary-color);">@daividtux12</strong> from 🇻🇳 Vietnam 
     </div>
 
     <!-- SOCIAL LINKS -->
@@ -1989,7 +1934,7 @@ class SolarWeatherCardEditor extends HTMLElement {
           <div style="font-size:9.5px;color:rgba(255,255,255,0.55);line-height:1.3;white-space:nowrap;">@long.1412</div>
         </div>
       </a>
-      <a href="http://paypal.me/doanlong1412" target="_blank" rel="noopener noreferrer"
+      <a href="http://paypal.me/daividtux12" target="_blank" rel="noopener noreferrer"
         style="display:flex;align-items:center;gap:6px;flex:1;padding:7px 10px;
           border-radius:10px;text-decoration:none;cursor:pointer;
           background:linear-gradient(135deg,rgba(0,68,153,0.9) 0%,rgba(0,36,100,0.95) 100%);
@@ -2118,7 +2063,7 @@ class SolarWeatherCardEditor extends HTMLElement {
     </div>
 
     <!-- ENTITY SECTIONS -->
-    ${SolarWeatherCardEditor.SECTIONS.map(s=>this._sectionHTML(s)).join('')}
+    ${SolarDtuxCardEditor.SECTIONS.map(s=>this._sectionHTML(s)).join('')}
 
     <!-- ROOMS accordion -->
     ${(()=>{
@@ -2626,12 +2571,12 @@ class SolarWeatherCardEditor extends HTMLElement {
     this._syncPickers();
   }
 }
-customElements.define('solar-weather-card-editor',SolarWeatherCardEditor);
+customElements.define('solar-dtux-card-editor',SolarDtuxCardEditor);
 
 // ═══════════════════════════════════════════════════════════════
 // CARD
 // ═══════════════════════════════════════════════════════════════
-class SolarWeatherCard extends HTMLElement {
+class SolarDtuxCard extends HTMLElement {
   constructor(){
     super();
     this.attachShadow({mode:'open'});
@@ -2645,7 +2590,7 @@ class SolarWeatherCard extends HTMLElement {
     this._shellReady=false; // đã tạo shell (anim + data layers) chưa
   }
 
-  static getConfigElement(){ return document.createElement('solar-weather-card-editor'); }
+  static getConfigElement(){ return document.createElement('solar-dtux-card-editor'); }
   static getStubConfig(){
     return {
       flow_style:'particle', language:'pt', background_opacity:45,
@@ -3207,7 +3152,7 @@ const lang=cfg.language
     this.shadowRoot.innerHTML=`<style>:host{display:block}</style>
       <ha-card style="padding:32px;text-align:center;">
         <div style="font-size:48px;margin-bottom:16px;">☀️🔋</div>
-        <div style="font-size:17px;font-weight:700;margin-bottom:8px;">Solar Weather Card</div>
+        <div style="font-size:17px;font-weight:700;margin-bottom:8px;">Solar Dtux Card</div>
         <div style="font-size:13px;color:var(--secondary-text-color);line-height:1.6;">Click <strong>✏️ Edit</strong> to configure entities.</div>
       </ha-card>`;
   }
@@ -4602,14 +4547,14 @@ ${minimalMode?`*,*::before,*::after{animation-duration:0.001s!important;animatio
   }
 }
 
-customElements.define('solar-weather-card',SolarWeatherCard);
+customElements.define('solar-dtux-card',SolarDtuxCard);
 window.customCards=window.customCards||[];
 window.customCards.push({
-  type:'solar-weather-card',
-  name:'Solar Weather Card',
+  type:'solar-dtux-card',
+  name:'Solar Dtux Card',
   description: '☀️ Solar & battery flow card with live weather, Solcast forecast, 10 languages, animated particles/waves, day/night icons & real-time stats.',
   preview:true,
-  documentationURL:'https://github.com/doanlong1412/solar-weather-card',
+  documentationURL:'https://github.com/daividtux12/solar-dtux-card',
 });
           p.setAttribute('value',saved);
         }
@@ -5210,7 +5155,7 @@ window.customCards.push({
 
     <!-- CREDIT -->
     <div style="text-align:center;padding:10px 14px 4px;font-size:11px;color:var(--secondary-text-color);line-height:1.6;">
-      ☀️ V1.8.1 Designed by <strong style="color:var(--primary-color);">@doanlong1412</strong> from 🇻🇳 Vietnam 
+      ☀️ V1.8.1 Designed by <strong style="color:var(--primary-color);">@daividtux12</strong> from 🇻🇳 Vietnam 
     </div>
 
     <!-- SOCIAL LINKS -->
@@ -5231,7 +5176,7 @@ window.customCards.push({
           <div style="font-size:9.5px;color:rgba(255,255,255,0.55);line-height:1.3;white-space:nowrap;">@long.1412</div>
         </div>
       </a>
-      <a href="http://paypal.me/doanlong1412" target="_blank" rel="noopener noreferrer"
+      <a href="http://paypal.me/daividtux12" target="_blank" rel="noopener noreferrer"
         style="display:flex;align-items:center;gap:6px;flex:1;padding:7px 10px;
           border-radius:10px;text-decoration:none;cursor:pointer;
           background:linear-gradient(135deg,rgba(0,68,153,0.9) 0%,rgba(0,36,100,0.95) 100%);
@@ -5360,7 +5305,7 @@ window.customCards.push({
     </div>
 
     <!-- ENTITY SECTIONS -->
-    ${SolarWeatherCardEditor.SECTIONS.map(s=>this._sectionHTML(s)).join('')}
+    ${SolarDtuxCardEditor.SECTIONS.map(s=>this._sectionHTML(s)).join('')}
 
     <!-- ROOMS accordion -->
     ${(()=>{
@@ -5868,12 +5813,12 @@ window.customCards.push({
     this._syncPickers();
   }
 }
-customElements.define('solar-weather-card-editor',SolarWeatherCardEditor);
+customElements.define('solar-dtux-card-editor',SolarDtuxCardEditor);
 
 // ═══════════════════════════════════════════════════════════════
 // CARD
 // ═══════════════════════════════════════════════════════════════
-class SolarWeatherCard extends HTMLElement {
+class SolarDtuxCard extends HTMLElement {
   constructor(){
     super();
     this.attachShadow({mode:'open'});
@@ -5887,7 +5832,7 @@ class SolarWeatherCard extends HTMLElement {
     this._shellReady=false; // đã tạo shell (anim + data layers) chưa
   }
 
-  static getConfigElement(){ return document.createElement('solar-weather-card-editor'); }
+  static getConfigElement(){ return document.createElement('solar-dtux-card-editor'); }
   static getStubConfig(){
     return {
       flow_style:'particle', language:'pt', background_opacity:45,
@@ -6449,7 +6394,7 @@ const lang=cfg.language
     this.shadowRoot.innerHTML=`<style>:host{display:block}</style>
       <ha-card style="padding:32px;text-align:center;">
         <div style="font-size:48px;margin-bottom:16px;">☀️🔋</div>
-        <div style="font-size:17px;font-weight:700;margin-bottom:8px;">Solar Weather Card</div>
+        <div style="font-size:17px;font-weight:700;margin-bottom:8px;">Solar Dtux Card</div>
         <div style="font-size:13px;color:var(--secondary-text-color);line-height:1.6;">Click <strong>✏️ Edit</strong> to configure entities.</div>
       </ha-card>`;
   }
@@ -7844,12 +7789,12 @@ ${minimalMode?`*,*::before,*::after{animation-duration:0.001s!important;animatio
   }
 }
 
-customElements.define('solar-weather-card',SolarWeatherCard);
+customElements.define('solar-dtux-card',SolarDtuxCard);
 window.customCards=window.customCards||[];
 window.customCards.push({
-  type:'solar-weather-card',
-  name:'Solar Weather Card',
+  type:'solar-dtux-card',
+  name:'Solar Dtux Card',
   description: '☀️ Solar & battery flow card with live weather, Solcast forecast, 10 languages, animated particles/waves, day/night icons & real-time stats.',
   preview:true,
-  documentationURL:'https://github.com/doanlong1412/solar-weather-card',
+  documentationURL:'https://github.com/daividtux12/solar-dtux-card',
 });
