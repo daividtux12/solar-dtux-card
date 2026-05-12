@@ -585,7 +585,7 @@ function makeWeatherIcon(ws){
 // ═══════════════════════════════════════════════════════════════
 // EDITOR — accordion sections + ha-entity-picker
 // ═══════════════════════════════════════════════════════════════
-class SolarWeatherCardEditor extends HTMLElement {
+class SolarDtuxCardEditor extends HTMLElement {
   constructor(){
     super();
     this.attachShadow({mode:'open'});
@@ -1270,7 +1270,7 @@ function makeWeatherIcon(ws){
 // ═══════════════════════════════════════════════════════════════
 // EDITOR — accordion sections + ha-entity-picker
 // ═══════════════════════════════════════════════════════════════
-class SolarWeatherCardEditor extends HTMLElement {
+class SolarDtuxCardEditor extends HTMLElement {
   constructor(){
     super();
     this.attachShadow({mode:'open'});
@@ -1968,7 +1968,7 @@ class SolarWeatherCardEditor extends HTMLElement {
 
     <!-- CREDIT -->
     <div style="text-align:center;padding:10px 14px 4px;font-size:11px;color:var(--secondary-text-color);line-height:1.6;">
-      ☀️ V1.8.1 Designed by <strong style="color:var(--primary-color);">@doanlong1412</strong> from 🇻🇳 Vietnam 
+      ☀️ V1.8.1 Designed by <strong style="color:var(--primary-color);">@daividtux12</strong> from 🇻🇳 Vietnam 
     </div>
 
     <!-- SOCIAL LINKS -->
@@ -1989,7 +1989,7 @@ class SolarWeatherCardEditor extends HTMLElement {
           <div style="font-size:9.5px;color:rgba(255,255,255,0.55);line-height:1.3;white-space:nowrap;">@long.1412</div>
         </div>
       </a>
-      <a href="http://paypal.me/doanlong1412" target="_blank" rel="noopener noreferrer"
+      <a href="http://paypal.me/daividtux12" target="_blank" rel="noopener noreferrer"
         style="display:flex;align-items:center;gap:6px;flex:1;padding:7px 10px;
           border-radius:10px;text-decoration:none;cursor:pointer;
           background:linear-gradient(135deg,rgba(0,68,153,0.9) 0%,rgba(0,36,100,0.95) 100%);
@@ -2118,7 +2118,7 @@ class SolarWeatherCardEditor extends HTMLElement {
     </div>
 
     <!-- ENTITY SECTIONS -->
-    ${SolarWeatherCardEditor.SECTIONS.map(s=>this._sectionHTML(s)).join('')}
+    ${SolarDtuxCardEditor.SECTIONS.map(s=>this._sectionHTML(s)).join('')}
 
     <!-- ROOMS accordion -->
     ${(()=>{
@@ -2626,12 +2626,12 @@ class SolarWeatherCardEditor extends HTMLElement {
     this._syncPickers();
   }
 }
-customElements.define('solar-dtux-card-editor',SolarWeatherCardEditor);
+customElements.define('solar-dtux-card-editor',SolarDtuxCardEditor);
 
 // ═══════════════════════════════════════════════════════════════
 // CARD
 // ═══════════════════════════════════════════════════════════════
-class SolarWeatherCard extends HTMLElement {
+class SolarDtuxCard extends HTMLElement {
   constructor(){
     super();
     this.attachShadow({mode:'open'});
@@ -3207,7 +3207,7 @@ const lang=cfg.language
     this.shadowRoot.innerHTML=`<style>:host{display:block}</style>
       <ha-card style="padding:32px;text-align:center;">
         <div style="font-size:48px;margin-bottom:16px;">☀️🔋</div>
-        <div style="font-size:17px;font-weight:700;margin-bottom:8px;">Solar Weather Card</div>
+        <div style="font-size:17px;font-weight:700;margin-bottom:8px;">Solar Dtux Card</div>
         <div style="font-size:13px;color:var(--secondary-text-color);line-height:1.6;">Click <strong>✏️ Edit</strong> to configure entities.</div>
       </ha-card>`;
   }
@@ -4602,14 +4602,14 @@ ${minimalMode?`*,*::before,*::after{animation-duration:0.001s!important;animatio
   }
 }
 
-customElements.define('solar-dtux-card',SolarWeatherCard);
+customElements.define('solar-dtux-card',SolarDtuxCard);
 window.customCards=window.customCards||[];
 window.customCards.push({
   type:'solar-dtux-card',
-  name:'Solar Weather Card',
+  name:'Solar Dtux Card',
   description: '☀️ Solar & battery flow card with live weather, Solcast forecast, 10 languages, animated particles/waves, day/night icons & real-time stats.',
   preview:true,
-  documentationURL:'https://github.com/doanlong1412/solar-dtux-card',
+  documentationURL:'https://github.com/daividtux12/solar-dtux-card',
 });
           p.setAttribute('value',saved);
         }
@@ -5210,7 +5210,7 @@ window.customCards.push({
 
     <!-- CREDIT -->
     <div style="text-align:center;padding:10px 14px 4px;font-size:11px;color:var(--secondary-text-color);line-height:1.6;">
-      ☀️ V1.8.1 Designed by <strong style="color:var(--primary-color);">@doanlong1412</strong> from 🇻🇳 Vietnam 
+      ☀️ V1.8.1 Designed by <strong style="color:var(--primary-color);">@daividtux12</strong> from 🇻🇳 Vietnam 
     </div>
 
     <!-- SOCIAL LINKS -->
@@ -5231,7 +5231,7 @@ window.customCards.push({
           <div style="font-size:9.5px;color:rgba(255,255,255,0.55);line-height:1.3;white-space:nowrap;">@long.1412</div>
         </div>
       </a>
-      <a href="http://paypal.me/doanlong1412" target="_blank" rel="noopener noreferrer"
+      <a href="http://paypal.me/daividtux12" target="_blank" rel="noopener noreferrer"
         style="display:flex;align-items:center;gap:6px;flex:1;padding:7px 10px;
           border-radius:10px;text-decoration:none;cursor:pointer;
           background:linear-gradient(135deg,rgba(0,68,153,0.9) 0%,rgba(0,36,100,0.95) 100%);
@@ -5360,7 +5360,7 @@ window.customCards.push({
     </div>
 
     <!-- ENTITY SECTIONS -->
-    ${SolarWeatherCardEditor.SECTIONS.map(s=>this._sectionHTML(s)).join('')}
+    ${SolarDtuxCardEditor.SECTIONS.map(s=>this._sectionHTML(s)).join('')}
 
     <!-- ROOMS accordion -->
     ${(()=>{
@@ -5868,12 +5868,12 @@ window.customCards.push({
     this._syncPickers();
   }
 }
-customElements.define('solar-dtux-card-editor',SolarWeatherCardEditor);
+customElements.define('solar-dtux-card-editor',SolarDtuxCardEditor);
 
 // ═══════════════════════════════════════════════════════════════
 // CARD
 // ═══════════════════════════════════════════════════════════════
-class SolarWeatherCard extends HTMLElement {
+class SolarDtuxCard extends HTMLElement {
   constructor(){
     super();
     this.attachShadow({mode:'open'});
@@ -6449,7 +6449,7 @@ const lang=cfg.language
     this.shadowRoot.innerHTML=`<style>:host{display:block}</style>
       <ha-card style="padding:32px;text-align:center;">
         <div style="font-size:48px;margin-bottom:16px;">☀️🔋</div>
-        <div style="font-size:17px;font-weight:700;margin-bottom:8px;">Solar Weather Card</div>
+        <div style="font-size:17px;font-weight:700;margin-bottom:8px;">Solar Dtux Card</div>
         <div style="font-size:13px;color:var(--secondary-text-color);line-height:1.6;">Click <strong>✏️ Edit</strong> to configure entities.</div>
       </ha-card>`;
   }
@@ -7844,12 +7844,12 @@ ${minimalMode?`*,*::before,*::after{animation-duration:0.001s!important;animatio
   }
 }
 
-customElements.define('solar-dtux-card',SolarWeatherCard);
+customElements.define('solar-dtux-card',SolarDtuxCard);
 window.customCards=window.customCards||[];
 window.customCards.push({
   type:'solar-dtux-card',
-  name:'Solar Weather Card',
+  name:'Solar Dtux Card',
   description: '☀️ Solar & battery flow card with live weather, Solcast forecast, 10 languages, animated particles/waves, day/night icons & real-time stats.',
   preview:true,
-  documentationURL:'https://github.com/doanlong1412/solar-dtux-card',
+  documentationURL:'https://github.com/daividtux12/solar-dtux-card',
 });
