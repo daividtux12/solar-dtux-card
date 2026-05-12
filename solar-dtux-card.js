@@ -2626,7 +2626,7 @@ class SolarWeatherCardEditor extends HTMLElement {
     this._syncPickers();
   }
 }
-customElements.define('solar-weather-card-editor',SolarWeatherCardEditor);
+customElements.define('solar-dtux-card-editor',SolarWeatherCardEditor);
 
 // ═══════════════════════════════════════════════════════════════
 // CARD
@@ -2645,7 +2645,7 @@ class SolarWeatherCard extends HTMLElement {
     this._shellReady=false; // đã tạo shell (anim + data layers) chưa
   }
 
-  static getConfigElement(){ return document.createElement('solar-weather-card-editor'); }
+  static getConfigElement(){ return document.createElement('solar-dtux-card-editor'); }
   static getStubConfig(){
     return {
       flow_style:'particle', language:'pt', background_opacity:45,
@@ -4602,14 +4602,14 @@ ${minimalMode?`*,*::before,*::after{animation-duration:0.001s!important;animatio
   }
 }
 
-customElements.define('solar-weather-card',SolarWeatherCard);
+customElements.define('solar-dtux-card',SolarWeatherCard);
 window.customCards=window.customCards||[];
 window.customCards.push({
-  type:'solar-weather-card',
+  type:'solar-dtux-card',
   name:'Solar Weather Card',
   description: '☀️ Solar & battery flow card with live weather, Solcast forecast, 10 languages, animated particles/waves, day/night icons & real-time stats.',
   preview:true,
-  documentationURL:'https://github.com/doanlong1412/solar-weather-card',
+  documentationURL:'https://github.com/doanlong1412/solar-dtux-card',
 });
           p.setAttribute('value',saved);
         }
@@ -5868,7 +5868,7 @@ window.customCards.push({
     this._syncPickers();
   }
 }
-customElements.define('solar-weather-card-editor',SolarWeatherCardEditor);
+customElements.define('solar-dtux-card-editor',SolarWeatherCardEditor);
 
 // ═══════════════════════════════════════════════════════════════
 // CARD
@@ -5887,7 +5887,7 @@ class SolarWeatherCard extends HTMLElement {
     this._shellReady=false; // đã tạo shell (anim + data layers) chưa
   }
 
-  static getConfigElement(){ return document.createElement('solar-weather-card-editor'); }
+  static getConfigElement(){ return document.createElement('solar-dtux-card-editor'); }
   static getStubConfig(){
     return {
       flow_style:'particle', language:'pt', background_opacity:45,
@@ -7844,12 +7844,12 @@ ${minimalMode?`*,*::before,*::after{animation-duration:0.001s!important;animatio
   }
 }
 
-customElements.define('solar-weather-card',SolarWeatherCard);
+customElements.define('solar-dtux-card',SolarWeatherCard);
 window.customCards=window.customCards||[];
 window.customCards.push({
-  type:'solar-weather-card',
+  type:'solar-dtux-card',
   name:'Solar Weather Card',
   description: '☀️ Solar & battery flow card with live weather, Solcast forecast, 10 languages, animated particles/waves, day/night icons & real-time stats.',
   preview:true,
-  documentationURL:'https://github.com/doanlong1412/solar-weather-card',
+  documentationURL:'https://github.com/doanlong1412/solar-dtux-card',
 });
